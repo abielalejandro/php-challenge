@@ -8,18 +8,17 @@ use App\Services\ContactService;
 
 class Mobile
 {
-
 	protected $provider;
 	
 	function __construct(CarrierInterface $provider)
 	{
 		$this->provider = $provider;
 	}
-
+        
 
 	public function makeCallByName($name = '')
 	{
-		if( empty($name) ) return;
+		if( empty($name) ) return null;
 
 		$contact = ContactService::findByName($name);
 

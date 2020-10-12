@@ -7,14 +7,15 @@ use App\Contact;
 
 class ContactService
 {
-	
-	public static function findByName(): Contact
+        
+        public static function findByName($name): Contact
 	{
-		// queries to the db
+            
 	}
 
 	public static function validateNumber(string $number): bool
 	{
-		// logic to validate numbers
+            $pattern = '/^\+(?:[0-9] ?){6,14}[0-9]$/';
+            return preg_match($pattern, $number);
 	}
 }
